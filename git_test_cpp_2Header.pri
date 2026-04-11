@@ -19286,6 +19286,23 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/Private/TimedDataMonitorEditorSettings.h" \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/Private/TimedDataMonitorEditorStyle.h" \
 	"$$unrealRootPath/Engine/Plugins/XGEController/Source/Public/XGEControllerModule.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitMessageLog.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlChangelistState.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlConsole.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlOperations.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlRunner.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/SGitSourceControlSettings.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlChangelist.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlCommand.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlMenu.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlModule.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlProvider.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlRevision.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlSettings.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlState.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlUtils.h" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/IGitSourceControlWorker.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2Character.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2GameMode.h" \

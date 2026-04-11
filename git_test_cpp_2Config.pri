@@ -1674,6 +1674,7 @@ OTHER_FILES += \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitor/TimedDataMonitor.Build.cs" \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/TimedDataMonitorEditor.build.cs" \
 	"$$unrealRootPath/Engine/Plugins/XGEController/Source/XGEController.Build.cs" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/GitSourceControl.Build.cs" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.Build.cs" \
  
 

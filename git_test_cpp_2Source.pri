@@ -14594,6 +14594,21 @@ SOURCES += \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/Private/TimedDataMonitorEditorModule.cpp" \
 	"$$unrealRootPath/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/Private/TimedDataMonitorEditorStyle.cpp" \
 	"$$unrealRootPath/Engine/Plugins/XGEController/Source/Private/XGEControllerModule.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlChangelist.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlChangelistState.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlCommand.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlConsole.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlMenu.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlModule.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlOperations.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlProvider.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlRevision.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlRunner.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlSettings.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlState.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlUtils.cpp" \
+	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/SGitSourceControlSettings.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2Character.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2GameMode.cpp" \

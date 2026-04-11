@@ -932,11 +932,6 @@ INCLUDEPATH += \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/CodeLiteSourceCodeAccess/Source/CodeLiteSourceCodeAccess/Private \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/CodeLiteSourceCodeAccess/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/CodeLiteSourceCodeAccess \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/CodeLiteSourceCodeAccess/Source \
-	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/GitSourceControl/Source/GitSourceControl/Private \
-	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/DesktopWidgets \
-	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Source/Developer/DesktopWidgets/Public \
-	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/GitSourceControl/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/GitSourceControl \
-	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/GitSourceControl/Source \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/KDevelopSourceCodeAccess/Source/KDevelopSourceCodeAccess/Private \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/KDevelopSourceCodeAccess/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/KDevelopSourceCodeAccess \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Developer/KDevelopSourceCodeAccess/Source \
@@ -1383,6 +1378,8 @@ INCLUDEPATH += \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Source/ImgMediaEditor/Private \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Source/ImgMediaEditor/Private/Customizations \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Source/ImgMediaEditor/Private/Factories \
+	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/DesktopWidgets \
+	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Source/Developer/DesktopWidgets/Public \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/ImgMediaEditor \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Source/ImgMediaEngine/Private \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/Media/ImgMedia/Source/ImgMediaEngine/Private/Unreal \
@@ -3819,6 +3816,10 @@ INCLUDEPATH += \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitor/Public \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/VirtualProduction/TimedDataMonitor/Source/TimedDataMonitorEditor/Private \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Plugins/VirtualProduction/TimedDataMonitor/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/TimedDataMonitorEditor \
+	Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private \
+	Plugins/UEGitPlugin-dev/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/GitSourceControl \
+	Plugins/UEGitPlugin-dev/Source \
+	Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public \
 	Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/git_test_cpp_2 \
 	Source \
 	/mnt/localvarasto/Documents/Applications/UnrealEngine/UnrealEngine/Engine/Source/ThirdParty/openexr/Deploy/OpenEXR-2.3.0 \
