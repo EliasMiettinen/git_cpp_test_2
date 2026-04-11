@@ -7,7 +7,10 @@
 		{
 			"Name": "git_test_cpp_2",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	]
 }
