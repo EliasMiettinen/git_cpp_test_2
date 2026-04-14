@@ -14609,6 +14609,8 @@ SOURCES += \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlUtils.cpp" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/SGitSourceControlSettings.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Tile.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/TileSet.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2Character.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2GameMode.cpp" \
