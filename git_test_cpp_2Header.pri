@@ -19303,6 +19303,8 @@ HEADERS += \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlUtils.h" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/IGitSourceControlWorker.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Enums.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Map.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MapGenerator.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Tile.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/TileSet.h" \

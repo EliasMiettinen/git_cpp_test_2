@@ -33,8 +33,30 @@ public:
 	void AddTile(ATile* Tile);
 	
 	UFUNCTION(BlueprintCallable, Category = "Map")
-	ATile* GetRandomTile();
+	ATile* GetTileAtIndex(int32 Index);
+	
+	UFUNCTION(BlueprintCallable, Category = "Map")
+	TArray<int32> GetNeighboringTiles(int32 Index);
+	
+	UFUNCTION(BlueprintCallable, Category = "Map")
+	int32 GetRandomTileIndex();
+	
+	UFUNCTION(BlueprintCallable, Category = "Map")
+	int32 GetRandomTileIndexOfType(ETileType InType);
+	
+	UFUNCTION(BlueprintCallable, Category = "Map")
+	void SetMapSize(int32 NewSizeX, int32 NewSizeY);
+	
+#pragma region Utility Functions
 	
 	UFUNCTION(BlueprintCallable, Category = "Map")
 	int32 GetTileListLength();
+	
+	bool IsBorderTile(int32 Index, int32 Modifier = 0);
+	
+	bool IsTileWithinBounds(int32 Index);
+	
+	bool IsTileInEvenRow(int32 Index);
+	
+#pragma endregion
 };
