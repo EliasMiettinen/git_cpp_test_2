@@ -14608,11 +14608,24 @@ SOURCES += \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlState.cpp" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/GitSourceControlUtils.cpp" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Private/SGitSourceControlSettings.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/AIPlayerController.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Army.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/ArmyNavigator.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/BasePlayerPawn.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/City.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/FactionData.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/HumanPlayerController.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Map.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MapGenerator.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyPlayerState.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/PlayerPawn.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Tile.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/TileSet.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/UnitData.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/UnitPreview.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/WarlordsGameInstance.cpp" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/WarlordsGameMode.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2Character.cpp" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2GameMode.cpp" \

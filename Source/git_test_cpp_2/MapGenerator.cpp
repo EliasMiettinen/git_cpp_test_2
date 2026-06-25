@@ -2,9 +2,12 @@
 
 
 #include "MapGenerator.h"
-
-#include <cmath>
-
+#include "CoreMinimal.h"
+#include "City.h"
+#include "cmath"
+#include "MyPlayerState.h"
+#include "WarlordsGameMode.h"
+#include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 
 
@@ -47,7 +50,7 @@ void AMapGenerator::BeginPlay()
 	ContinentsGenerated = 0;
 	
 	// Initialize forest generation
-	TotalForests = FMath::Clamp(static_cast<int32>(std::ceil(ForestPercentage / 10.0f)) + ((MapSizeX / 2) / 6),2, 50) + 3;
+	TotalForests = FMath::Clamp(static_cast<int32>(std::ceil(ForestPercentage / 10.0f)) + ((MapSizeX / 2) / 2),2, 50) + 3;
 	ForestsGenerated = 0;
 	
 	// Initialize swamp generation
@@ -61,9 +64,6 @@ void AMapGenerator::BeginPlay()
 	// Initialize hill generation
 	TotalHills = FMath::Clamp(static_cast<int32>(std::ceil(HillPercentage / 7.0f)) + ((MapSizeX / 2) / 5), 2, 50) + 2;
 	HillsGenerated = 0;
-	
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Total Continents: " + FString::FromInt(TotalContinents));
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Total Forests: " + FString::FromInt(TotalForests));
 	
 	bIsGenerating = false;
 	CurrentStage = 0;
@@ -89,14 +89,15 @@ void AMapGenerator::Tick(float DeltaTime)
 	}
 }
 
-void AMapGenerator::GenerateMap()
+/**
+ * Initialize map generator
+ * @param SizeX 
+ * @param SizeY 
+ */
+void AMapGenerator::Initialize(int32 SizeX, int32 SizeY)
 {
-	// Validate required components
-	if (!GetWorld() || !TileSet || !TileClass)
-		return;
-	
-	// Start the generator
-	bIsGenerating = true;
+	this->MapSizeX = SizeX;
+	this->MapSizeY = SizeY;
 }
 
 /**
@@ -129,11 +130,25 @@ void AMapGenerator::NextStep()
 		case 5:
 			GenerateHillFormation();
 			break;
+		case 6:
+			GenerateStartingCities();
 		default:
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Finished swamp generation");
+			CompleteGeneration();
 			bIsGenerating = false;
 			break;
 	}
+}
+
+#pragma region Map Generation
+
+void AMapGenerator::GenerateMap()
+{
+	// Validate required components
+	if (!GetWorld() || !TileSet || !TileClass)
+		return;
+	
+	// Start the generator
+	bIsGenerating = true;
 }
 
 /**
@@ -177,8 +192,6 @@ void AMapGenerator::GenerateWaterRow()
 	{
 		CurrentStage++;
 		CurrentRow = 1;
-		
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Finished water generation");
 	}
 }
 
@@ -247,7 +260,6 @@ void AMapGenerator::GenerateContinent()
 	if (ContinentsGenerated >= TotalContinents)
 	{
 		CurrentStage++;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Finished continent generation");
 	}
 }
 
@@ -301,7 +313,6 @@ void AMapGenerator::GenerateForest()
 	if (ForestsGenerated >= TotalForests)
 	{
 		CurrentStage++;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Finished forest generation. Total forests: %d"), TotalForests));
 	}
 }
 
@@ -397,7 +408,6 @@ void AMapGenerator::GenerateSwamp()
 	if (SwampsGenerated >= TotalSwamps)
 	{
 		CurrentStage++;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Finished swamp generation. Total swamps: %d"), TotalSwamps));
 	}
 }
 
@@ -448,7 +458,6 @@ void AMapGenerator::GenerateMountainRange()
 	if (MountainRangesGenerated >= TotalMountainRanges)
 	{
 		CurrentStage++;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Finished mountain generation. Total mountain ranges: %d"), TotalMountainRanges));
 	}
 }
 
@@ -527,6 +536,138 @@ void AMapGenerator::GenerateHillFormation()
 	if (HillsGenerated >= TotalHills)
 	{
 		CurrentStage++;
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Finished hill formation. Total hills: %d"), TotalHills));
 	}
+}
+
+#pragma endregion
+
+
+#pragma region CityGeneration
+
+void AMapGenerator::GenerateStartingCities()
+{
+	AWarlordsGameMode* GameMode = Cast<AWarlordsGameMode>(GetWorld()->GetAuthGameMode());
+	if (!GameMode) { return; }
+	
+	TArray<FVector> CityLocations;
+	
+	// Loop all the players
+	for (int32 i = 0; i < GameMode->Players.Num(); i++)
+	{
+		// Get the player controller
+		AController* PlayerController = GameMode->Players[i];
+		
+		int32 TileFound = -1;
+		
+		// Loop until a valid tile is found or the maximum attempts are reached
+		int32 KillCounter = 0;
+		while (TileFound == -1)
+		{
+			KillCounter++;
+			if (KillCounter > 100000) { break; }
+			
+			if (int32 TileIndex = Map->GetRandomTileIndexOfType(ETileType::Plain))
+			{
+				ATile* Tile = Map->GetTileAtIndex(TileIndex);
+			
+				// Check if the city location is valid
+				bool bValid = true;
+				for (FVector CL : CityLocations)
+				{
+					if (FVector::Distance(Tile->GetActorLocation(), CL) < 1500)
+					{
+						bValid = false;
+						break;
+					}
+				}
+				// If spot is valid, spawn the city
+				if (bValid)
+				{
+					CityLocations.Add(Tile->GetActorLocation());
+					TileFound = TileIndex;
+					break;
+				}
+			}
+		}
+	
+		
+		// Define the city class to be spawned on the map
+		TSubclassOf<ACity> CityClass;
+		UFactionData* FactionData = nullptr;
+		
+		// Get the city class from the faction data
+		AMyPlayerState* PlayerState = Cast<AMyPlayerState>(PlayerController->PlayerState);
+		if (PlayerState)
+		{
+			FString EnumString = UEnum::GetValueAsString(PlayerState->Faction);
+			FString ValueName;
+			EnumString.Split(TEXT("::"), nullptr, &ValueName, ESearchCase::CaseSensitive, ESearchDir::FromEnd);
+			FName RowName = FName(*ValueName);
+			if (FactionsTable)
+			{
+				FFactionTableRow* Row = FactionsTable->FindRow<FFactionTableRow>(RowName, TEXT("Get Faction Data"));
+				if (Row)
+				{
+					FactionData = Row->Data;
+					CityClass = Row->Data->CityClass;
+				}				
+			}
+		}
+		
+		// Spawn the city
+		ATile* Tile = Map->GetTileAtIndex(TileFound);
+		if (Tile && FactionData)
+		{
+			ACity* NewCity = GetWorld()->SpawnActor<ACity>(CityClass, Tile->GetTargetPointLocation(), FRotator::ZeroRotator);
+			if (NewCity)
+			{
+				// Initialize the city
+				NewCity->Initialize(Tile, i, "Capital");
+				Tile->Construct = NewCity;
+				PlayerState->AddCity(NewCity);
+				
+				// Spawn the startup army for the player
+				SpawnStartupArmy(FactionData, NewCity);
+			}
+		}
+	}
+	
+	// Move on to the next stage
+	CurrentStage++;
+}
+
+/**
+ * Spawns the initial army for a city at the start of the game.
+ * @param FactionData The faction data containing the units to spawn.
+ * @param City The city where the units will be spawned.
+ */
+void AMapGenerator::SpawnStartupArmy(UFactionData* FactionData, ACity* City)
+{
+	if (FactionData && City)
+	{
+		City->SpawnUnit(FactionData->Units[0]);
+		City->SpawnUnit(FactionData->Units[1]);
+	}
+}
+
+// TODO: Implement neutral city generation logic
+void AMapGenerator::GenerateCities()
+{
+	
+}
+
+#pragma endregion
+
+
+/**
+ * @brief Completes the map generation process.
+ *
+ * Signals the end of the map generation sequence by broadcasting the
+ * OnMapGenerationComplete event. This notifies all listeners that the map
+ * generation is finished and allows for any necessary post-generation logic
+ * to be executed.
+ */
+void AMapGenerator::CompleteGeneration()
+{
+	OnMapGenerationComplete.Broadcast();
 }

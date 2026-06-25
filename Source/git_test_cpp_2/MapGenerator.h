@@ -3,9 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "FactionData.h"
 #include "Map.h"
+#include "MyPlayerState.h"
 #include "GameFramework/Actor.h"
+#include "TileSet.h"
+#include "Engine/DataTable.h"
 #include "MapGenerator.generated.h"
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMapGenerationComplete);
 
 UCLASS()
 class GIT_TEST_CPP_2_API AMapGenerator : public AActor
@@ -24,6 +30,12 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map")
 	float DelayBetweenSteps = 0.2f;
+	
+	UPROPERTY(BlueprintAssignable, Category = "Map")
+	FOnMapGenerationComplete OnMapGenerationComplete;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map")
+	UDataTable* FactionsTable;
 
 #pragma region Map Settings
 	
@@ -120,10 +132,14 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	void Initialize(int32 SizeX, int32 SizeY);
 
 	UFUNCTION(BlueprintCallable, Category = "Map")
 	void GenerateMap();
 
+#pragma region Map Generation
+	
 	void GenerateWaterRow();
 	void GenerateContinent();
 	void GenerateForest();
@@ -131,4 +147,15 @@ public:
 	void GenerateMountainRange();
 	void GenerateHillFormation();
 	
+#pragma endregion
+	
+#pragma region City Generation
+	
+	void GenerateStartingCities();
+	void SpawnStartupArmy(UFactionData* FactionData, ACity* City);
+	void GenerateCities();
+	
+#pragma endregion
+	
+	void CompleteGeneration();
 };

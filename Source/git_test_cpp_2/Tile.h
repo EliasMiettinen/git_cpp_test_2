@@ -6,7 +6,11 @@
 #include "Enums.h"
 #include "TileSet.h"
 #include "GameFramework/Actor.h"
+// #include "Map.h"
 #include "Tile.generated.h"
+
+class AArmy;
+class AMap;
 
 UCLASS()
 class GIT_TEST_CPP_2_API ATile : public AActor
@@ -25,10 +29,22 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tile")
 	ETileType Type;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tile")
+	AActor* Construct;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tile")
+	AArmy* Army;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	USceneComponent* SpawnPoint;
+
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
+	AMap* Map;
 
 public:	
 	// Called every frame
@@ -42,4 +58,10 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "Tile")
 	void ChangeType(UTileData* NewTileData);
+	
+	UFUNCTION(BlueprintCallable, Category = "Tile")
+	FVector GetTargetPointLocation();
+	
+	UFUNCTION(BlueprintCallable, Category = "Tile")
+	TArray<ATile*> GetNeighboringTiles();
 };

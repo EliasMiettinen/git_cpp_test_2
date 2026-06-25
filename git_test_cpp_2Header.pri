@@ -19302,14 +19302,29 @@ HEADERS += \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlState.h" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/GitSourceControlUtils.h" \
 	"$$git_test_cpp_2RootPath/Plugins/UEGitPlugin-dev/Source/GitSourceControl/Public/IGitSourceControlWorker.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/AIPlayerController.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Army.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/ArmyNavigator.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/BasePlayerPawn.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/City.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Enums.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/FactionData.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/HumanPlayerController.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Map.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MapGenerator.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyActor.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/MyPlayerState.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/PlayerPawn.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Tile.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/TileSet.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/UnitData.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/UnitPreview.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/WarlordsGameInstance.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/WarlordsGameMode.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2Character.h" \
 	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/git_test_cpp_2GameMode.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Structs/GameSystemStructs.h" \
+	"$$git_test_cpp_2RootPath/Source/git_test_cpp_2/Structs/GameplayDataStructs.h" \
  
 

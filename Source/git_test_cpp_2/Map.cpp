@@ -40,6 +40,22 @@ ATile* AMap::GetTileAtIndex(int32 Index)
 }
 
 /**
+ * Find the index of a given tile in the map.
+ * @param InTile The tile to search for in the map.
+ * @return The index of the tile in the map, or -1 if not found or if InTile is nullptr.
+ */
+int32 AMap::IndexOf(ATile* InTile)
+{
+	if (InTile == nullptr) return -1;
+	
+	int32 Index = Tiles.IndexOfByKey(InTile);
+	
+	if (Index == INDEX_NONE) return -1;
+	
+	return Index;
+}
+
+/**
  * Get a random tile from the map.
  * @return A random tile, or nullptr if the map is empty.
  */

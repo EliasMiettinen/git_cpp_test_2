@@ -13,3 +13,10 @@ enum class ETileType : uint8
 	Swamp		UMETA(DisplayName = "Swamp"),
 	Water		UMETA(DisplayName = "Water"),
 };
+
+UENUM(BlueprintType)
+enum class EFaction : uint8
+{
+	Vikings		UMETA(DisplayName = "Vikings"),
+	Franks		UMETA(DisplayName = "Franks"),
+};

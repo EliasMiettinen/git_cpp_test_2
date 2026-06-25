@@ -36,6 +36,9 @@ public:
 	ATile* GetTileAtIndex(int32 Index);
 	
 	UFUNCTION(BlueprintCallable, Category = "Map")
+	int32 IndexOf(ATile* InTile);
+	
+	UFUNCTION(BlueprintCallable, Category = "Map")
 	TArray<int32> GetNeighboringTiles(int32 Index);
 	
 	UFUNCTION(BlueprintCallable, Category = "Map")
